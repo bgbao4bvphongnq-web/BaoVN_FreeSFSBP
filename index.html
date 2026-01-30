@@ -9,7 +9,7 @@
 body{
   font-family: Arial, sans-serif;
   background:#0b0f1a;
-  color:#fff;
+  color:#ffffff;
   margin:0;
   padding:20px;
 }
@@ -24,7 +24,7 @@ h1{
   background:#161b2e;
   padding:15px;
   border-radius:10px;
-  margin-bottom:10px;
+  margin-bottom:12px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -32,9 +32,77 @@ h1{
 button{
   background:#00d9ff;
   border:none;
-  padding:8px 14px;
-  border-radius:8px;
+  padding:10px 18px;
+  border-radius:10px;
   cursor:pointer;
+  font-weight:bold;
+}
+button:active{
+  transform:scale(0.95);
+}
+.subscribe{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
+footer{
+  text-align:center;
+  margin-top:25px;
+  font-size:14px;
+  opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🚀 BaoVN – Free SFS Blueprints</h1>
+
+<!-- ===== ROCKETS ===== -->
+<div class="section">
+<h2>🚀 Rockets</h2>
+
+<div class="card">
+  <span>Saturn V</span>
+  <button onclick="copyLink('saturn')">COPY LINK</button>
+</div>
+</div>
+
+<!-- ===== SPACE STATION ===== -->
+<div class="section">
+<h2>🛰 Space Station</h2>
+
+<div class="card">
+  <span>ISS</span>
+  <button onclick="copyLink('iss')">COPY LINK</button>
+</div>
+</div>
+
+<!-- ===== SUBSCRIBE ===== -->
+<div class="subscribe">
+  <button onclick="window.open('https://youtube.com/@baovn_sfs?si=8V18T-fuZwiQdgJj','_blank')">
+    🔔 Subscribe to channel
+  </button>
+</div>
+
+<footer>
+© Copyright by Godbaovn_rb (Youtube) 2026
+</footer>
+
+<script>
+const links = {
+  saturn: "https://sharing.spaceflightsimulator.app/rocket/BnPTcP2iEfCMptsmxpcUUg",
+  iss: "https://sharing.spaceflightsimulator.app/rocket/UMPQLv2iEfCMptsmxpcUUg"
+};
+
+function copyLink(id){
+  navigator.clipboard.writeText(links[id]);
+  alert("✅ Đã copy link!");
+}
+</script>
+
+</body>
+</html>  cursor:pointer;
   font-weight:bold;
 }
 button:active{
