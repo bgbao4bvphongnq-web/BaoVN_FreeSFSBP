@@ -1,65 +1,114 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>BaoVN_SFSFreeBP.com.vn</title>
-  <style>
-    body {
-      background: #0f172a;
-      color: #e5e7eb;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #38bdf8;
-    }
-    .link {
-      background: #020617;
-      border-radius: 10px;
-      padding: 15px;
-      margin: 12px 0;
-      box-shadow: 0 0 10px rgba(56,189,248,0.15);
-    }
-    .link a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .desc {
-      color: #cbd5f5;
-      margin-bottom: 6px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>BaoVN – Free SFS Blueprints</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#0b0f1a;
+  color:#fff;
+  margin:0;
+  padding:20px;
+}
+h1{
+  text-align:center;
+  color:#00d9ff;
+}
+.section{
+  margin-top:30px;
+}
+.card{
+  background:#161b2e;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+button{
+  background:#00d9ff;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+button:active{
+  transform:scale(0.95);
+}
+footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:14px;
+  opacity:0.6;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🚀 BaoVN_SFSFreeBP.com.vn</h1>
+<h1>🚀 BaoVN – Free SFS Blueprints</h1>
 
-<div class="link">
-  <div class="desc">Describe: Rocket components</div>
-  <a href="https://sharing.spaceflightsimulator.app/rocket/8zyuZFMaEe6eJ7uAd13aUA" target="_blank">Open Blueprint</a>
+<!-- ISS -->
+<div class="section">
+<h2>🛰 Space Station / ISS</h2>
+
+<div class="card">
+  <span>ISS Alpha</span>
+  <button onclick="copyBP('iss')">COPY</button>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: Soyuz Blueprint</div>
-  <a href="https://sharing.spaceflightsimulator.app/rocket/CP1ahleaEe6eNLuAd13aUA" target="_blank">Open Blueprint</a>
+<textarea id="iss" style="display:none;">
+DÁN BLUEPRINT ISS VÀO ĐÂY
+</textarea>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: Space Shuttle + Space Cruiser + more</div>
-  <a href="https://sharing.spaceflightsimulator.app/rocket/tcCdu11SEe6eRLuAd13aUA" target="_blank">Open Blueprint</a>
+<!-- ROCKET -->
+<div class="section">
+<h2>🚀 Rockets</h2>
+
+<div class="card">
+  <span>Saturn V</span>
+  <button onclick="copyBP('saturn')">COPY</button>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: Rocket components 2 (No DLC – Latest)</div>
-  <a href="https://sharing.spaceflightsimulator.app/rocket/zM-6lXc0Ee6edbuAd13aUA" target="_blank">Open Blueprint</a>
+<textarea id="saturn" style="display:none;">
+DÁN BLUEPRINT SATURN V VÀO ĐÂY
+</textarea>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: All other blueprints (Google Drive)</div>
+<!-- KHÁC -->
+<div class="section">
+<h2>🧪 Other</h2>
+
+<div class="card">
+  <span>Test Rocket</span>
+  <button onclick="copyBP('test')">COPY</button>
+</div>
+
+<textarea id="test" style="display:none;">
+DÁN BLUEPRINT KHÁC VÀO ĐÂY
+</textarea>
+</div>
+
+<footer>
+BaoVN • Free Spaceflight Simulator Blueprints
+</footer>
+
+<script>
+function copyBP(id){
+  const t = document.getElementById(id);
+  navigator.clipboard.writeText(t.value);
+  alert("✅ Đã copy blueprint! Mở SFS và paste.");
+}
+</script>
+
+</body>
+</html>  <div class="desc">Describe: All other blueprints (Google Drive)</div>
   <a href="https://drive.google.com/drive/folders/1-Dfuvuehw5mk_zWQIvcKKCaHz_sgY2d2" target="_blank">Open Folder</a>
 </div>
 
