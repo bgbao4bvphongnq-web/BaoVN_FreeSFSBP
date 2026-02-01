@@ -2,39 +2,151 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>BaoVN – Free SFS Blueprints</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BaoVN_SFSFreeBP</title>
 
 <style>
 body{
-  font-family: Arial, sans-serif;
-  background:#0b0f1a;
-  color:#ffffff;
-  margin:0;
+  background:#0f172a;
+  color:#e5e7eb;
+  font-family:Arial,sans-serif;
   padding:20px;
+  margin:0;
 }
-h1{
-  text-align:center;
-  color:#00d9ff;
-}
-.section{
-  margin-top:30px;
-}
-.card{
-  background:#161b2e;
+h1{text-align:center;color:#38bdf8}
+
+/* card */
+.link{
+  background:#020617;
+  border-radius:10px;
   padding:15px;
-  border-radius:10px;
-  margin-bottom:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  margin:12px 0;
+  box-shadow:0 0 10px rgba(56,189,248,.15);
 }
-button{
-  background:#00d9ff;
-  border:none;
+.desc{color:#cbd5f5;margin-bottom:8px}
+
+/* button */
+.btn{
   padding:10px 18px;
-  border-radius:10px;
+  border:1px solid #38bdf8;
+  background:#020617;
+  color:#38bdf8;
+  border-radius:6px;
+  font-weight:bold;
   cursor:pointer;
+}
+
+/* ===== LOADING ===== */
+#overlay{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at bottom,#020617,#000);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+}
+.space{
+  position:absolute;
+  inset:0;
+  background:url("https://i.imgur.com/9QO4F0D.png");
+  background-size:cover;
+  opacity:.35;
+}
+.rocket{
+  font-size:48px;
+  animation:launch 1.6s ease-in forwards;
+}
+@keyframes launch{
+  from{transform:translateY(300px)}
+  to{transform:translateY(-500px)}
+}
+.spinner{
+  width:50px;height:50px;
+  border:5px solid #1e293b;
+  border-top:5px solid #38bdf8;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin-top:20px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{
+  margin-top:14px;
+  letter-spacing:2px;
+  color:#38bdf8;
+  animation:flicker .15s infinite;
+}
+@keyframes flicker{50%{opacity:.6}}
+</style>
+</head>
+
+<body>
+
+<h1>🚀 BaoVN_SFSFreeBP.com.vn</h1>
+
+<!-- ===== BLUEPRINT LIST ===== -->
+
+<div class="link"><div class="desc">Rocket Components</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/8zyuZFMaEe6eJ7uAd13aUA')">Open This</button></div>
+
+<div class="link"><div class="desc">Soyuz Blueprint</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/CP1ahleaEe6eNLuAd13aUA')">Open This</button></div>
+
+<div class="link"><div class="desc">Space Shuttle + Space Cruiser</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/tcCdu11SEe6eRLuAd13aUA')">Open This</button></div>
+
+<div class="link"><div class="desc">Rocket Components 2 (No DLC)</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/zM-6lXc0Ee6edbuAd13aUA')">Open This</button></div>
+
+<div class="link"><div class="desc">Satellite</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/mAMsVK14Ee6LZkVkBXBP0w')">Open This</button></div>
+
+<div class="link"><div class="desc">Big Delta Rocket (100 Boosters)</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/TAz2FbE3Ee6LZkVkBXBP0w')">Open This</button></div>
+
+<div class="link"><div class="desc">1000x Efficient Rocket</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/VB0jkrHhEe6LZkVkBXBP0w')">Open This</button></div>
+
+<div class="link"><div class="desc">Impossible Challenge</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/tZC7ONyjEe6LqEVkBXBP0w')">Open This</button></div>
+
+<div class="link"><div class="desc">Falcon Heavy + Starlink</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/j1XwNRnrEe-3PuNyTkiz9w')">Open This</button></div>
+
+<div class="link"><div class="desc">Large Rocket – 18 Satellites</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/SgHYe0FDEe-ZEjmvLffn8g')">Open This</button></div>
+
+<div class="link"><div class="desc">Saturn V</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/s9CLL0LFEe-ZFDmvLffn8g')">Open This</button></div>
+
+<div class="link"><div class="desc">Large Rocket – 72 Satellites</div>
+<button class="btn" onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/Evt1fFNDEe-ZLzmvLffn8g')">Open This</button></div>
+
+<div class="link"><div class="desc">ALL BP (Google Drive)</div>
+<button class="btn" onclick="openBP('https://drive.google.com/drive/folders/1-Dfuvuehw5mk_zWQIvcKKCaHz_sgY2d2')">Open This</button></div>
+
+<!-- ===== LOADING ===== -->
+<div id="overlay">
+  <div class="space"></div>
+  <div class="rocket">🚀</div>
+  <div class="spinner"></div>
+  <div class="loading-text">PLS WAIT, OPENING BP</div>
+</div>
+
+<script>
+function openBP(url){
+  const ov=document.getElementById("overlay");
+  ov.style.display="flex";
+  setTimeout(()=>{
+    window.open(url,"_blank");
+    ov.style.display="none";
+  },5000);
+}
+</script>
+
+</body>
+  </html>  cursor:pointer;
   font-weight:bold;
 }
 button:active{
