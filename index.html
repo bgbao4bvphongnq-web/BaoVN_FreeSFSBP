@@ -1,40 +1,151 @@
-<div class="link">
-  <div class="desc">Describe: Rocket components</div>
-  <button class="btn"
-    onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/8zyuZFMaEe6eJ7uAd13aUA')">
-    Open This
-  </button>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>BaoVN – Free SFS BP</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff;
+}
+
+/* ===== NỘI DUNG CŨ ===== */
+.bp{
+  padding:10px;
+}
+.bp h3{
+  margin:6px 0;
+}
+.bp button{
+  font-size:12px;
+}
+
+/* ===== OVERLAY LAUNCH ===== */
+#overlay{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:none;
+  overflow:hidden;
+  z-index:9999;
+}
+
+/* KHÔNG GIAN */
+.space{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at center,#020617,#000),
+    url("https://i.imgur.com/9QO4F0D.png");
+  background-size:cover;
+}
+
+/* NGỌN LỬA CHE MÀN */
+.flame{
+  position:absolute;
+  left:-250px;
+  bottom:-250px;
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,
+    rgba(255,230,140,1) 0%,
+    rgba(255,140,0,.95) 30%,
+    rgba(255,60,0,.9) 55%,
+    rgba(0,0,0,0) 75%);
+  filter:blur(40px);
+  transform-origin:bottom left;
+  animation:flameBlast 2.2s ease-in forwards;
+}
+
+@keyframes flameBlast{
+  to{
+    transform:scale(6);
+    opacity:0;
+  }
+}
+
+/* TÊN LỬA */
+.rocket{
+  position:absolute;
+  left:30px;
+  bottom:-150px;
+  width:140px;
+  animation:launch 3s ease-in forwards;
+}
+
+@keyframes launch{
+  to{
+    bottom:120%;
+    transform:rotate(-12deg);
+  }
+}
+
+/* CHỮ OPENING */
+.opening{
+  position:absolute;
+  top:45%;
+  width:100%;
+  text-align:center;
+  font-size:32px;
+  letter-spacing:4px;
+  color:#0ff;
+  animation:glitch .15s infinite;
+}
+
+@keyframes glitch{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(-2px,2px)}
+  50%{transform:translate(2px,-2px)}
+  75%{transform:translate(-1px,1px)}
+  100%{transform:translate(0,0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NỘI DUNG BP ===== -->
+<div class="bp">
+  <h3>Mô tả: Các bộ phận của tên lửa</h3>
+  <button onclick="launch()">Mở cái này ra</button>
+
+  <h3>Mô tả: Bản thiết kế Soyuz</h3>
+  <button onclick="launch()">Mở cái này ra</button>
+
+  <h3>Mô tả: Falcon Heavy với Starlink</h3>
+  <button onclick="launch()">Mở cái này ra</button>
+
+  <h3>Mô tả: Sao Thổ V</h3>
+  <button onclick="launch()">Mở cái này ra</button>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: Soyuz Blueprint</div>
-  <button class="btn"
-    onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/CP1ahleaEe6eNLuAd13aUA')">
-    Open This
-  </button>
+<!-- ===== OVERLAY ===== -->
+<div id="overlay">
+  <div class="space"></div>
+  <div class="flame"></div>
+
+  <!-- ĐỔI LINK ẢNH TÊN LỬA TẠI ĐÂY -->
+  <img class="rocket"
+       src="https://i.imgur.com/4ZQZ4ZQ.png">
+
+  <div class="opening">OPENING</div>
 </div>
 
-<div class="link">
-  <div class="desc">Describe: Space Shuttle + Space Cruiser</div>
-  <button class="btn"
-    onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/tcCdu11SEe6eRLuAd13aUA')">
-    Open This
-  </button>
-</div>
+<script>
+function launch(){
+  const o = document.getElementById("overlay");
+  o.style.display="block";
 
-<div class="link">
-  <div class="desc">Describe: Rocket components 2 (No DLC)</div>
-  <button class="btn"
-    onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/zM-6lXc0Ee6edbuAd13aUA')">
-    Open This
-  </button>
-</div>
+  setTimeout(()=>{
+    o.style.display="none";
+  },3000);
+}
+</script>
 
-<div class="link">
-  <div class="desc">Describe: Satellite</div>
-  <button class="btn"
-    onclick="openBP('https://sharing.spaceflightsimulator.app/rocket/mAMsVK14Ee6LZkVkBXBP0w')">
-    Open This
+</body>
+</html>    Open This
   </button>
 </div>
 
